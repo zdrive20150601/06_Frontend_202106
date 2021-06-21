@@ -9,8 +9,9 @@
 <body>
     <div id="app">
         <h1>{{ message }}</h1>
-        <p>累乗：{{ state.double }}</p>
+        <p>累乗：{{ state.double }} <strong>{{ state.multiple }}</strong></p>
         <button @click="increment">加算：{{ state.count }}</button>
+        <button @click="decrement">減算：{{ state.count }}</button>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -20,11 +21,13 @@
                 // console.log(message.value)
                 const state = Vue.reactive({
                     count: 0,
-                    double: Vue.computed(() => Math.pow(state.count, 2))
+                    double: Vue.computed(() => Math.pow(state.count, 2)),
+                    multiple: Vue.computed(() => {if(state.count % 3 == 0){return '3の倍数です'}})
                 })
 
                 const increment = () => { state.count++ }
-                return {message, state, increment}
+                const decrement = () => { state.count-- }
+                return {message, state, increment, decrement}
             }
         }).mount('#app')
     </script>
