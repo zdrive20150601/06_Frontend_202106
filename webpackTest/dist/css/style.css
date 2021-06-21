@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/** パーシャルの読み込み **/
+/* MediaQueryの宣言をミックスインで定義 */
+h1 {
+  color: red;
+  /* MediaQueryの宣言だけを展開 */ }
+  h1:hover {
+    color: blue; }
+  @media screen and (max-width: 768px) {
+    h1 {
+      /* include内を読み込み */
+      color: green; }
+      h1:active {
+        color: pink; } }
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly93ZWJwYWNrdGVzdC8uL3NyYy9zY3NzL3N0eWxlLnNjc3MiLCJ3ZWJwYWNrOi8vd2VicGFja3Rlc3QvLi9zcmMvc2Nzcy9fbW9kdWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FBQ2hCO0FDREE7QURHQTtFQUNFLFVBQVU7RUFJVjtFQUxGO0lBR0ksV0FBVztFQ0piO0lEQ0Y7TUNBSTtNRE9BLFlBQVk7TUFQaEI7UUFTTSxXQUFXLElBQ1oiLCJmaWxlIjoiY3NzL3N0eWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBjaGFyc2V0IFwidXRmLThcIjtcclxuLyoqIOODkeODvOOCt+ODo+ODq+OBruiqreOBv+i+vOOBvyAqKi9cclxuQGltcG9ydCBcIm1vZHVsZVwiO1xyXG5oMSB7XHJcbiAgY29sb3I6IHJlZDtcclxuICAmOmhvdmVyIHtcclxuICAgIGNvbG9yOiBibHVlO1xyXG4gIH1cclxuICAvKiBNZWRpYVF1ZXJ544Gu5a6j6KiA44Gg44GR44KS5bGV6ZaLICovXHJcbiAgQGluY2x1ZGUgbVEge1xyXG4gICAgY29sb3I6IGdyZWVuO1xyXG4gICAgJjphY3RpdmUge1xyXG4gICAgICBjb2xvcjogcGluaztcclxuICAgIH1cclxuICB9XHJcbn1cclxuIiwiLyogTWVkaWFRdWVyeeOBruWuo+iogOOCkuODn+ODg+OCr+OCueOCpOODs+OBp+Wumue+qSAqL1xyXG5AbWl4aW4gbVEge1xyXG4gIEBtZWRpYSBzY3JlZW4gYW5kKG1heC13aWR0aDogNzY4cHgpIHtcclxuICAgIC8qIGluY2x1ZGXlhoXjgpLoqq3jgb/ovrzjgb8gKi9cclxuICAgIEBjb250ZW50O1xyXG4gIH1cclxufVxyXG4iXSwic291cmNlUm9vdCI6IiJ9*/

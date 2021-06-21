@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アロー関数</title>
+</head>
+<body>
+    <script>
+        const price = [198, 268, 324, 182, 98];
+        const taxArr = price.map(function(arr){
+            return ((p) => Math.floor(p * 1.1))(arr) + '円'
+        })
+        console.log(taxArr)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueCounter</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <p>累乗：{{ state.double }}</p>
+        <button @click="increment">加算：{{ state.count }}</button>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        Vue.createApp({
+            setup() {
+                const message = Vue.ref('Hello Vue!')
+                // console.log(message.value)
+                const state = Vue.reactive({
+                    count: 0,
+                    double: Vue.computed(() => Math.pow(state.count, 2))
+                })
+
+                const increment = () => { state.count++ }
+                return {message, state, increment}
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

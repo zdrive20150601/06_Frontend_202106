@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作</title>
+</head>
+<body>
+    <h1 id="title">タイトル</h1>
+    <p id="text">サンプル文章</p>
+    <a href="" id="link">テキストリンク</a>
+    <img id="cat" src="https://placekitten.com/400/400" alt="cat">
+    <button id="effect">ボタン</button>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            // const t = document.getElementById('title').innerText
+            // const p = document.getElementById('text').innerText
+            // const t = $('#title').text()
+            // const p = $('#text').text()
+            // alert(p.replace('文章', t))
+            // function changeTitle() {
+            //     $('#title').text('タイトルを変更')
+            // }
+            // $('#title').click(changeTitle)
+            // console.log(changeTitle)
+            // console.log(changeTitle())
+            // $('#link').click(function(){
+            //     $('#link').text('テキスト変更')
+            //     return false;
+            // })
+            $('#cat').click(function(){
+                $(this).attr('src', 'https://placekitten.com/g/400/400')
+            })
+            $('#title').click(function(){
+                $(this).css({
+                    color: 'white',
+                    padding: '10px',
+                    fontSize: '24px',
+                    backgroundColor: 'red',
+                    borderRadius: '3px'
+                })
+            })
+            $('#effect').click(function(){
+                $('#title').toggle('slow')
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* MediaQueryの宣言をミックスインで定義 */
+@mixin mQ {
+  @media screen and(max-width: 768px) {
+    /* include内を読み込み */
+    @content;
+  }
+}

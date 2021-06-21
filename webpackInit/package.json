@@ -1,0 +1,11 @@
+{
+  "name": "webpackInit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@webpack-cli/init": "^1.1.3",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページトップ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body {
+            height: 2000px;
+            /* スクロール領域を確保 */
+            background: linear-gradient(#eee, #aaa);
+            /* スクロール可視化 */
+        }
+
+        #pageTopArea {
+            display: none;
+            /* 訪問時非表示 */
+            position: fixed;
+            /* スクロール時ブラウザ右下固定 */
+            right: 30px;
+            bottom: 30px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #pageTopLink {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        #pageTopLink:hover {
+            transition: .5s ease;
+            opacity: .5;
+        }
+    </style>
+</head>
+<body>
+    <div id="pageTopArea">
+        <a id="pageTopLink">
+          <i class="fa fa-chevron-circle-up fa-5x"></i>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                /* 座標が500px以上になったら */
+                if ($(this).scrollTop() > 500) {
+                    $('#pageTopArea').fadeIn()
+                } else {
+                    $('#pageTopArea').fadeOut()
+                }
+            })
+            $('#pageTopLink').click(function () {
+                /* 0.35秒かけてスクロール値を0にする(トップに戻る) */
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 350)
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+@charset "utf-8";
+/** パーシャルの読み込み **/
+@import "module";
+h1 {
+  color: red;
+  &:hover {
+    color: blue;
+  }
+  /* MediaQueryの宣言だけを展開 */
+  @include mQ {
+    color: green;
+    &:active {
+      color: pink;
+    }
+  }
+}
