@@ -1,25 +1,28 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+    <CopyDocs :docs="copy" />
+    <Parent />
     <RefLinks />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import RefLinks from './RefLinks.vue'
+import CopyDocs from './CopyDocs.vue'
+import Parent from './Parent.vue'
 
 export default defineComponent({
   name: 'HelloWorld',
-  components: { RefLinks },
+  components: { RefLinks, CopyDocs, Parent },
   props: {
     msg: String,
   },
+  setup() {
+      const copy = ref('For a guide and recipes on how to configure / customize this project,')
+      return { copy }
+  }
 });
 </script>
 
